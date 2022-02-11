@@ -16,9 +16,8 @@ from dateutil import parser
 input_label = 'tweet-text'
 classifier = pipeline('sentiment-analysis')
 
-# Create a client factory. Factory helps you create StreamingClient (see below) a little bit easier
-security = SecurityOptions("../certificates/ca.cert", "USER_NAME", "PASSWORD")
-client = StreamingClient('kafka-k1.quix.ai:9093,kafka-k2.quix.ai:9093,kafka-k3.quix.ai:9093', security)
+# Create a client factory. You can also pass a token if needed
+client = QuixStreamingClient()
 
 # To get more info about consumer group,
 # see https://documentation.dev.quix.ai/quix-main/demo-quix-docs/concepts/kafka.html
